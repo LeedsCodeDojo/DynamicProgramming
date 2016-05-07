@@ -1,9 +1,9 @@
-package dojodynamicprogramming;
+package dynamicprogramming;
 
 class Result {
-        int value;
-        int noOfCoins;
-        int lastCoin;
+        final int value;
+        final int noOfCoins;
+        final int lastCoin;
 
         public Result(int noOfCoins, int value, int lastCoin) {
             this.noOfCoins = noOfCoins;

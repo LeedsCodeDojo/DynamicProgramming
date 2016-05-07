@@ -1,10 +1,8 @@
-package dojodynamicprogramming;
+package dynamicprogramming;
 
-import dojodynamicprogramming.CoinProblem;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 
 public class CoinProblemTest {
 

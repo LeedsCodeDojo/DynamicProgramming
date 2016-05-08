@@ -29,13 +29,10 @@ let solve (matrix:int[][]) =
     // Walk back up the tree to produce the route
     let rec walkRoute row column solution =
         let solution' = (string) matrix.[row].[column] + if solution = "" then "" else " -> " + solution
-        if row = 0 && column = 0 then
-            solution'
-        else
-            if fst workspace.[row,column] = Direction.RIGHT then
-                walkRoute row (column - 1) solution'
-            else
-                walkRoute (row - 1) column solution'
+        match fst workspace.[row,column] with
+        | Direction.START -> solution'
+        | Direction.RIGHT -> walkRoute row (column - 1) solution'
+        | Direction.DOWN -> walkRoute (row - 1) column solution'
   
     //Work out the solution and mess about formatting it correctly
     let solution = walkRoute (numberOfRows - 1) (numberOfColumns - 1) ""
